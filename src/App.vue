@@ -2,8 +2,8 @@
 
     <div id="app">
 
-        <Header/>
-        <Main/>
+        <Header @choiseMovie="changeMovie"/>
+        <Main :titleMovie="titleMovie"/>
 
     </div>
 
@@ -19,6 +19,18 @@
         components: {
             Header,
             Main
+        },
+
+        data (){
+            return {
+                titleMovie: ""
+            }
+        },
+        
+        methods: {
+            changeMovie (movie){
+                this.titleMovie= movie;
+            }
         }
     }
 
